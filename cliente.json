@@ -1,0 +1,617 @@
+{
+  "$schema": "https://raw.githubusercontent.com/AlejoMFernandez/kit-demos/main/docs/cliente.schema.json",
+  "id": "bodegon-parque",
+  "nombre": "Bodegón Parque",
+  "pais": "AR",
+  "idioma": "es",
+  "modo": "demo",
+  "whatsapp": "5491168535207",
+  "instagram": "bodegonparque",
+  "prefijoPedido": "BP",
+  "supabase": {
+    "url": "",
+    "anonKey": ""
+  },
+  "marca": {
+    "logo": "img/escudo.svg",
+    "logoPanel": "img/escudo.svg",
+    "favicon": "img/escudo.svg",
+    "colores": {
+      "fondo": "#F2EBDD",
+      "superficie": "#FFFFFF",
+      "texto": "#0E0D0C",
+      "primario": "#A53132",
+      "sobrePrimario": "#FFFFFF",
+      "acento": "#1F4A17",
+      "sobreAcento": "#FFFFFF",
+      "borde": "#CFC4B0"
+    },
+    "fuentes": {
+      "titulos": "'Anton', 'Arial Narrow', sans-serif",
+      "texto": "'Montserrat', system-ui, sans-serif",
+      "googleFonts": ""
+    },
+    "estilo": {
+      "forma": "recta",
+      "radio": "4px",
+      "sombra": "suave",
+      "borde": "1.5px",
+      "mayusculas": false
+    }
+  },
+  "modulos": {
+    "carta": true,
+    "carrito": true,
+    "reservas": true,
+    "admin": true
+  },
+  "horarios": {
+    "lun": [
+      [
+        "17:00",
+        "00:30"
+      ]
+    ],
+    "mar": [
+      [
+        "08:00",
+        "00:00"
+      ]
+    ],
+    "mie": [
+      [
+        "08:00",
+        "00:00"
+      ]
+    ],
+    "jue": [
+      [
+        "08:00",
+        "00:00"
+      ]
+    ],
+    "vie": [
+      [
+        "08:00",
+        "00:00"
+      ]
+    ],
+    "sab": [
+      [
+        "08:00",
+        "00:00"
+      ]
+    ],
+    "dom": [
+      [
+        "08:00",
+        "17:00"
+      ]
+    ]
+  },
+  "reservas": {
+    "capacidad": 120,
+    "maxPersonas": 15,
+    "anticipacionMin": 60,
+    "diasAdelante": 30,
+    "cerrados": [],
+    "servicios": [
+      {
+        "id": "almuerzo",
+        "nombre": "Almuerzo",
+        "dias": [
+          "mar",
+          "mie",
+          "jue",
+          "vie",
+          "sab",
+          "dom"
+        ],
+        "tandas": [
+          {
+            "nombre": "Mediodía",
+            "turnos": [
+              "12:00",
+              "12:30",
+              "13:00",
+              "13:30",
+              "14:00",
+              "14:30"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "show",
+        "nombre": "Cena show",
+        "dias": [
+          "sab"
+        ],
+        "tandas": [
+          {
+            "nombre": "Show 21:30",
+            "turnos": [
+              "20:30",
+              "21:00",
+              "21:30"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cena",
+        "nombre": "Cena",
+        "dias": [
+          "lun",
+          "mar",
+          "mie",
+          "jue",
+          "vie"
+        ],
+        "tandas": [
+          {
+            "nombre": "Noche",
+            "turnos": [
+              "20:00",
+              "20:30",
+              "21:00",
+              "21:30",
+              "22:00",
+              "22:30"
+            ]
+          }
+        ]
+      }
+    ],
+    "extras": [
+      {
+        "id": "cumple",
+        "label": "Venimos a festejar un cumple"
+      },
+      {
+        "id": "socio",
+        "label": "Soy socio/a del Club Parque"
+      }
+    ]
+  },
+  "pedidos": {
+    "salidas": [
+      "whatsapp"
+    ],
+    "tipos": [
+      "retiro"
+    ],
+    "envio": 0,
+    "minimo": 0,
+    "sinPrecio": "a_confirmar"
+  },
+  "pagos": {
+    "mercadopago": {
+      "endpoint": "https://kit-demos-amf.vercel.app/api/mp-preference",
+      "modo": "sandbox"
+    }
+  },
+  "carta": {
+    "categorias": [
+      {
+        "id": "entradas",
+        "nombre": "Entradas",
+        "nota": "Para el centro de la mesa"
+      },
+      {
+        "id": "milanesas",
+        "nombre": "Milanesas",
+        "nota": "Todas salen con papas fritas o la guarnición que elijas"
+      },
+      {
+        "id": "carnes",
+        "nombre": "Carnes y al horno"
+      },
+      {
+        "id": "pastas",
+        "nombre": "Pastas",
+        "nota": "Amasadas en casa"
+      },
+      {
+        "id": "pizzas",
+        "nombre": "Pizzas"
+      },
+      {
+        "id": "postres",
+        "nombre": "Postres",
+        "nota": "Caseros, para el final"
+      },
+      {
+        "id": "cafeteria",
+        "nombre": "Cafetería"
+      },
+      {
+        "id": "ejecutivo",
+        "nombre": "Menú ejecutivo",
+        "nota": "Martes a viernes al mediodía · plato + bebida (último precio publicado: a confirmar)"
+      },
+      {
+        "id": "shows",
+        "nombre": "Cena show (próximos)",
+        "nota": "El nombre es el artista; la descripción, el día. La web arma la entrada sola."
+      }
+    ],
+    "productos": [
+      {
+        "id": "rabas",
+        "categoria": "entradas",
+        "nombre": "Rabas",
+        "descripcion": "Recién empanadas, doradas y crocantes por fuera, tiernas por dentro. Con limón y salsa.",
+        "precio": null,
+        "etiquetas": [
+          "casa"
+        ],
+        "foto": "img/rabas-800.webp"
+      },
+      {
+        "id": "tortilla",
+        "categoria": "entradas",
+        "nombre": "Tortilla de papas",
+        "descripcion": "Alta, dorada y 100 % casera. ¿Babé o bien cocida?",
+        "precio": null,
+        "etiquetas": [],
+        "foto": "img/tortilla-800.webp"
+      },
+      {
+        "id": "bunuelos",
+        "categoria": "entradas",
+        "nombre": "Buñuelos de espinaca",
+        "descripcion": "Crocantes por fuera, tiernos por dentro. Para compartir.",
+        "precio": null,
+        "etiquetas": [
+          "veggie"
+        ],
+        "foto": "img/bunuelos-800.webp"
+      },
+      {
+        "id": "burrata",
+        "categoria": "entradas",
+        "nombre": "Burrata",
+        "descripcion": "Con tomates, albahaca y un buen chorro de oliva.",
+        "precio": null,
+        "etiquetas": [
+          "veggie"
+        ],
+        "foto": "img/burrata-800.webp"
+      },
+      {
+        "id": "rusa-crudo",
+        "categoria": "entradas",
+        "nombre": "Rusa con jamón crudo",
+        "descripcion": "Ensalada rusa bien cremosa con crudo.",
+        "precio": null,
+        "etiquetas": [],
+        "foto": "img/rusa-crudo-800.webp"
+      },
+      {
+        "id": "matambre",
+        "categoria": "entradas",
+        "nombre": "Matambre arrollado con rusa",
+        "descripcion": "Casero, como en las mesas de antes.",
+        "precio": null,
+        "etiquetas": [],
+        "foto": "img/matambre-800.webp"
+      },
+      {
+        "id": "mila-parque",
+        "categoria": "milanesas",
+        "nombre": "Milanesa Parque",
+        "descripcion": "La de la casa: panceta crujiente, cheddar derretido y dos huevos fritos, con papas fritas.",
+        "precio": null,
+        "etiquetas": [
+          "casa"
+        ],
+        "foto": "img/mila-parque-800.webp"
+      },
+      {
+        "id": "napolitana",
+        "categoria": "milanesas",
+        "nombre": "Milanesa a la napolitana",
+        "descripcion": "Salsa casera, lluvia de mozzarella y orégano.",
+        "precio": null,
+        "etiquetas": [],
+        "foto": "img/napolitana-800.webp"
+      },
+      {
+        "id": "mila-quesos",
+        "categoria": "milanesas",
+        "nombre": "Milanesa a los quesos",
+        "descripcion": "Cubierta con una combinación de quesos gratinados.",
+        "precio": null,
+        "etiquetas": [],
+        "foto": "img/mila-quesos-800.webp"
+      },
+      {
+        "id": "mila-fideos",
+        "categoria": "milanesas",
+        "nombre": "Milanesa con fideos",
+        "descripcion": "Bien crocante, con fideos caseros.",
+        "precio": null,
+        "etiquetas": [],
+        "foto": "img/mila-fideos-800.webp"
+      },
+      {
+        "id": "mila-papas",
+        "categoria": "milanesas",
+        "nombre": "Milanesa con papas fritas",
+        "descripcion": "La clásica, con una montaña de papas doradas.",
+        "precio": null,
+        "etiquetas": []
+      },
+      {
+        "id": "milanesitas",
+        "categoria": "milanesas",
+        "nombre": "Milanesitas de muzzarella",
+        "descripcion": "Crujientes, con pesto y tomate.",
+        "precio": null,
+        "etiquetas": [
+          "veggie"
+        ],
+        "foto": "img/milanesitas-800.webp"
+      },
+      {
+        "id": "carne-horno",
+        "categoria": "carnes",
+        "nombre": "Carne al horno con papas",
+        "descripcion": "El plato estrella: 6 horas de cocción, papas doradas y verduras asadas.",
+        "precio": null,
+        "etiquetas": [
+          "casa"
+        ],
+        "foto": "img/carne-horno-800.webp"
+      },
+      {
+        "id": "lomito",
+        "categoria": "carnes",
+        "nombre": "Lomito a la crema",
+        "descripcion": "Jugoso, con salsa cremosa y papas doradas.",
+        "precio": null,
+        "etiquetas": [],
+        "foto": "img/lomito-800.webp"
+      },
+      {
+        "id": "bife-riojana",
+        "categoria": "carnes",
+        "nombre": "Bife a la riojana",
+        "descripcion": "Con papas crocantes, jamón, morrones y huevo a punto.",
+        "precio": null,
+        "etiquetas": [],
+        "foto": "img/bife-riojana-800.webp"
+      },
+      {
+        "id": "pastel-papa",
+        "categoria": "carnes",
+        "nombre": "Pastel de papa",
+        "descripcion": "Carne bien condimentada, puré cremoso y queso gratinado.",
+        "precio": null,
+        "etiquetas": [],
+        "foto": "img/pastel-papa-800.webp"
+      },
+      {
+        "id": "salmon",
+        "categoria": "carnes",
+        "nombre": "Salmón con puré",
+        "descripcion": "Salmón dorado, salsa cremosa y puré bien suave.",
+        "precio": null,
+        "etiquetas": [],
+        "foto": "img/salmon-800.webp"
+      },
+      {
+        "id": "cazuela",
+        "categoria": "carnes",
+        "nombre": "Cazuela de mariscos",
+        "descripcion": "Langostinos, calamares y mejillones, con salsa para mojar el pan.",
+        "precio": null,
+        "etiquetas": [],
+        "foto": "img/cazuela-800.webp"
+      },
+      {
+        "id": "noquis-hongos",
+        "categoria": "pastas",
+        "nombre": "Ñoquis con salsa de hongos",
+        "descripcion": "La sugerencia del mes.",
+        "precio": null,
+        "etiquetas": [
+          "nuevo"
+        ],
+        "foto": "img/noquis-hongos-800.webp"
+      },
+      {
+        "id": "noquis-bolognesa",
+        "categoria": "pastas",
+        "nombre": "Ñoquis a la bolognesa",
+        "descripcion": "Caseros, con bolognesa y mucho queso.",
+        "precio": null,
+        "etiquetas": [],
+        "foto": "img/noquis-bolognesa-800.webp"
+      },
+      {
+        "id": "fusiles",
+        "categoria": "pastas",
+        "nombre": "Fusiles al fierrito",
+        "descripcion": "Amasados en casa uno por uno.",
+        "precio": null,
+        "etiquetas": [
+          "casa"
+        ],
+        "foto": "img/fusiles-800.webp"
+      },
+      {
+        "id": "canelones",
+        "categoria": "pastas",
+        "nombre": "Canelones",
+        "descripcion": "Bien rellenos y gratinados, mitad fileto y mitad salsa blanca.",
+        "precio": null,
+        "etiquetas": [],
+        "foto": "img/canelones-800.webp"
+      },
+      {
+        "id": "spaghetti",
+        "categoria": "pastas",
+        "nombre": "Spaghetti a la crema",
+        "descripcion": "Pasta casera, salsa suave y lluvia de queso rallado.",
+        "precio": null,
+        "etiquetas": [],
+        "foto": "img/spaghetti-800.webp"
+      },
+      {
+        "id": "muzza",
+        "categoria": "pizzas",
+        "nombre": "Grande de muzza",
+        "descripcion": "Queso gratinado y aceitunas. Pide una birra bien helada.",
+        "precio": null,
+        "etiquetas": [],
+        "foto": "img/muzza-800.webp"
+      },
+      {
+        "id": "flan",
+        "categoria": "postres",
+        "nombre": "Flan casero",
+        "descripcion": "Alto, con crema y mucho dulce de leche.",
+        "precio": null,
+        "etiquetas": [
+          "casa"
+        ],
+        "foto": "img/flan-800.webp"
+      },
+      {
+        "id": "tiramisu",
+        "categoria": "postres",
+        "nombre": "Tiramisú",
+        "descripcion": "Cremoso, con el sabor de siempre.",
+        "precio": null,
+        "etiquetas": [],
+        "foto": "img/tiramisu-800.webp"
+      },
+      {
+        "id": "chocotorta",
+        "categoria": "postres",
+        "nombre": "Chocotorta",
+        "descripcion": "Bien húmeda y bien fría.",
+        "precio": null,
+        "etiquetas": [],
+        "foto": "img/chocotorta-800.webp"
+      },
+      {
+        "id": "mousse",
+        "categoria": "postres",
+        "nombre": "Mousse de chocolate",
+        "descripcion": "Bien cremosa.",
+        "precio": null,
+        "etiquetas": [],
+        "foto": "img/mousse-800.webp"
+      },
+      {
+        "id": "cafe-medialunas",
+        "categoria": "cafeteria",
+        "nombre": "Café con medialunas",
+        "descripcion": "Para desayunar o merendar en el bodegón.",
+        "precio": null,
+        "etiquetas": [],
+        "foto": "img/cafe-800.webp"
+      },
+      {
+        "id": "ej-cesar",
+        "categoria": "ejecutivo",
+        "nombre": "Ensalada César",
+        "descripcion": "",
+        "precio": 19900,
+        "etiquetas": [],
+        "foto": "img/cesar-800.webp"
+      },
+      {
+        "id": "ej-pechuga",
+        "categoria": "ejecutivo",
+        "nombre": "Pechuga grillé con guarnición",
+        "descripcion": "",
+        "precio": 19900,
+        "etiquetas": []
+      },
+      {
+        "id": "ej-carne",
+        "categoria": "ejecutivo",
+        "nombre": "Carne al horno con guarnición",
+        "descripcion": "",
+        "precio": 19900,
+        "etiquetas": [],
+        "foto": "img/carne-ejecutivo-800.webp"
+      },
+      {
+        "id": "ej-noquis",
+        "categoria": "ejecutivo",
+        "nombre": "Ñoquis o fideos con salsa",
+        "descripcion": "",
+        "precio": 19900,
+        "etiquetas": []
+      },
+      {
+        "id": "ej-merluza",
+        "categoria": "ejecutivo",
+        "nombre": "Filet de merluza con guarnición",
+        "descripcion": "",
+        "precio": 19900,
+        "etiquetas": [],
+        "foto": "img/merluza-800.webp"
+      },
+      {
+        "id": "ej-pastel",
+        "categoria": "ejecutivo",
+        "nombre": "Pastel de papa",
+        "descripcion": "",
+        "precio": 19900,
+        "etiquetas": []
+      },
+      {
+        "id": "ej-albondigas",
+        "categoria": "ejecutivo",
+        "nombre": "Albóndigas con puré",
+        "descripcion": "",
+        "precio": 19900,
+        "etiquetas": []
+      },
+      {
+        "id": "ej-lentejas",
+        "categoria": "ejecutivo",
+        "nombre": "Guiso de lentejas",
+        "descripcion": "",
+        "precio": 19900,
+        "etiquetas": []
+      },
+      {
+        "id": "show-desanzo",
+        "categoria": "shows",
+        "nombre": "Diego Desanzo",
+        "descripcion": "Sábado · 21:30 · cena show",
+        "precio": null,
+        "etiquetas": []
+      }
+    ]
+  },
+  "textos": {
+    "agregar": "Sumar",
+    "agregado": "Sumado",
+    "tuPedido": "Tu pedido para llevar",
+    "verPedido": "Tu pedido",
+    "carritoVacio": "Todavía no sumaste nada.",
+    "carritoVacioSub": "Elegí de la carta o de la formación de la casa y aparece acá.",
+    "retiro": "Retiro en el bodegón (Marcos Sastre 3258)",
+    "porWhatsapp": "Mandar el pedido por WhatsApp",
+    "porWhatsappSub": "El bodegón te confirma el precio y la hora",
+    "enviarPedido": "Mandar pedido",
+    "pedidoListo": "¡Golazo! Tu pedido salió",
+    "pedidoListoSub": "Tu código es {codigo}. El bodegón lo ve en su panel y te escribe por WhatsApp.",
+    "waPedido": "Hola Bodegón Parque! Quiero hacer este pedido para llevar:",
+    "avisoSinPrecio": "Los precios se confirman por WhatsApp antes de prepararlo.",
+    "reservarMesa": "Reservá tu mesa",
+    "confirmarReserva": "Pedir mi mesa",
+    "reservaLista": "¡Mesa pedida!",
+    "reservaListaSub": "{personas} · {dia} a las {hora}. Te confirmamos por WhatsApp.",
+    "comentario": "Algo que tengamos que saber (cumple, silla para bebé…)",
+    "sinTurnos": "No quedan turnos para este servicio."
+  }
+}

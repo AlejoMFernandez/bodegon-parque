@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bodegón Parque · El bodegón del Club Parque, cuna de cracks</title>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://bodegon-parque.vercel.app/">
+<meta property="og:site_name" content="Bodegón Parque">
+<meta property="og:title" content="Bodegón Parque · reservá tu mesa en el club">
+<meta property="og:description" content="Somos tradición, somos barrio: carta, menú ejecutivo, cena show y take away en Villa del Parque.">
+<meta property="og:image" content="https://bodegon-parque.vercel.app/img/og.jpg?v=1">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:alt" content="Bodegón Parque: tu mesa en el Club Parque">
+<meta property="og:locale" content="es_AR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://bodegon-parque.vercel.app/img/og.jpg?v=1">
+<meta name="description" content="El bodegón del histórico Club Parque, cuna de cracks, en Marcos Sastre 3258 (Villa del Parque). Milanesa Parque, carne al horno, pastas caseras, menú ejecutivo, cena show los sábados y take away.">
+<meta name="theme-color" content="#A53132">
+<link rel="canonical" href="https://bodegon-parque.vercel.app/">
+<link rel="icon" href="img/escudo.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preload" href="fonts/anton.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/montserrat.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="img/fachada-1100.webp" as="image" media="(min-width: 900px)">
+<link rel="preload" href="img/fachada-600.webp" as="image" media="(max-width: 899px)">
+<script>
+  (function () {
+    var d = document.documentElement; d.classList.add('js');
+    try { if (!matchMedia('(prefers-reduced-motion: reduce)').matches && !/[?&]sinintro/.test(location.search)) d.classList.add('con-intro'); } catch (e) {}
+  })();
+</script>
+<link rel="stylesheet" href="kit/kit.css?v=1">
+<link rel="stylesheet" href="css/style.css?v=1">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Restaurant","name":"Bodegón Parque","servesCuisine":"Bodegón argentino","address":{"@type":"PostalAddress","streetAddress":"Marcos Sastre 3258","addressLocality":"Villa del Parque, CABA","addressCountry":"AR"},"telephone":"+54 9 11 6853-5207","acceptsReservations":"True","openingHours":["Tu-Sa 08:00-24:00","Su 08:00-17:00","Mo 17:00-00:30"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.2","reviewCount":"1228"},"sameAs":["https://www.instagram.com/bodegonparque/"]}
+</script>
+</head>
+<body>
+
+<!-- ============ INTRO: el saque del medio ============ -->
+<div class="intro" id="intro" aria-hidden="true">
+  <div class="intro__mitad intro__mitad--a"><div class="intro__tiza"></div></div>
+  <div class="intro__mitad intro__mitad--b"><div class="intro__tiza"></div></div>
+  <svg class="intro__lineas" viewBox="0 0 1000 1000" preserveAspectRatio="none" aria-hidden="true">
+    <line class="intro__raya" x1="0" y1="640" x2="500" y2="640"/>
+    <circle class="intro__circulo" cx="500" cy="500" r="160"/>
+  </svg>
+  <div class="intro__centro">
+    <img class="intro__escudo" src="img/escudo.svg" alt="" width="400" height="456">
+    <span class="intro__pelota"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="#fff" stroke="#111" stroke-width="7"/><path d="M50 32 67 44 60 64H40L33 44Z" fill="#111"/><path d="M50 32V14M67 44l17-6M60 64l11 15M40 64 29 79M33 44l-17-6" stroke="#111" stroke-width="4"/></svg></span>
+    <span class="intro__firma">cuna de cracks</span>
+  </div>
+</div>
+
+<a class="saltar" href="#main">Saltar al contenido</a>
+
+<!-- ============ BARRA ============ -->
+<header class="barra" id="barra">
+  <div class="barra__in">
+    <a class="barra__logo" href="#inicio" aria-label="Bodegón Parque, inicio"><img src="img/escudo.svg" alt="" width="40" height="46" data-logo-barra><span>Bodegón Parque</span></a>
+    <nav class="barra__nav" aria-label="Secciones">
+      <a href="#historia">La historia</a><a href="#formacion">La formación</a><a href="#carta">Carta</a><a href="#ejecutivo">Menú ejecutivo</a><a href="#show">Cena show</a><a href="#donde">Dónde</a>
+    </nav>
+    <div class="barra__acc">
+      <button type="button" class="btn btn--linea-crema barra__llevar" data-kit-open="carrito">Para llevar</button>
+      <button type="button" class="btn btn--crema" data-kit-open="reservas">Reservá</button>
+      <button type="button" class="barra__menu" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu" data-menu><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="menu" id="menu" hidden>
+  <nav class="menu__nav" aria-label="Menú">
+    <a href="#historia" style="--d:1">La historia</a><a href="#formacion" style="--d:2">La formación</a><a href="#carta" style="--d:3">Carta</a><a href="#ejecutivo" style="--d:4">Menú ejecutivo</a><a href="#show" style="--d:5">Cena show</a><a href="#llevar" style="--d:6">Para llevar</a><a href="#donde" style="--d:7">Dónde</a>
+  </nav>
+  <div class="menu__pie"><span>Marcos Sastre 3258 · adentro del Club Parque</span><a href="https://wa.me/5491168535207" target="_blank" rel="noopener">WhatsApp 11 6853-5207</a></div>
+</div>
+
+<main id="main">
+
+<!-- ============ HERO B: la placa del barrio ============ -->
+<section class="hero papel-bordo" id="inicio" aria-labelledby="hero-t">
+  <svg class="banderines" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 8 Q720 62 1440 8" fill="none" stroke="#0E0D0C" stroke-width="2" vector-effect="non-scaling-stroke"/>
+    <g class="banderines__g">
+      <polygon style="--i:0" points="60,12 104,15 82,62" fill="#1F4A17"/><polygon style="--i:1" points="180,22 224,25 202,72" fill="#F2EBDD"/><polygon style="--i:2" points="300,30 344,32 322,80" fill="#0E0D0C"/><polygon style="--i:3" points="420,35 464,37 442,84" fill="#1F4A17"/>
+      <polygon style="--i:4" points="976,37 1020,35 998,84" fill="#1F4A17"/><polygon style="--i:5" points="1096,32 1140,30 1118,80" fill="#0E0D0C"/><polygon style="--i:6" points="1216,25 1260,22 1238,72" fill="#F2EBDD"/><polygon style="--i:7" points="1336,15 1380,12 1358,62" fill="#1F4A17"/>
+    </g>
+  </svg>
+  <div class="hero__in">
+    <div class="hero__txt">
+      <p class="hero__firma entra" style="--d:1">el bodegón del Club Parque</p>
+      <h1 class="hero__t" id="hero-t"><span class="linea"><span style="--d:2">Somos tradición,</span></span><span class="linea"><span style="--d:3">somos barrio.</span></span></h1>
+      <p class="hero__sub entra" style="--d:4">El bodegón de siempre como nunca antes: carta completa, menú ejecutivo de martes a viernes, cena show los sábados y take away.</p>
+      <div class="hero__cta entra" style="--d:5">
+        <button type="button" class="btn btn--crema btn--grande" data-kit-open="reservas">Reservá tu mesa</button>
+        <a class="btn btn--verde btn--grande" href="#llevar">Pedí para llevar</a>
+        <a class="hero__link" href="#carta">Ver la carta</a>
+      </div>
+    </div>
+    <div class="hero__collage" aria-hidden="false">
+      <figure class="polaroid polaroid--fachada descubre" style="--d:2">
+        <span class="cinta"></span>
+        <picture>
+          <source media="(min-width: 900px)" srcset="img/fachada-1100.webp">
+          <img src="img/fachada-600.webp" alt="El frente del bodegón con el toldo rojo: pastas, carnes, pizzas" width="600" height="295" fetchpriority="high" decoding="async">
+        </picture>
+      </figure>
+      <figure class="polaroid polaroid--rabas descubre" style="--d:4">
+        <span class="cinta"></span>
+        <img src="img/rabas-800.webp" alt="Rabas con limón" width="800" height="576" decoding="async">
+        <figcaption>Las mejores rabas</figcaption>
+      </figure>
+      <figure class="polaroid polaroid--carne descubre" style="--d:5">
+        <img src="img/carne-horno-800.webp" alt="Carne al horno con papas" width="800" height="800" decoding="async">
+        <figcaption>Carne al horno</figcaption>
+      </figure>
+    </div>
+  </div>
+  <div class="hero__cinta papel-verde">
+    <span class="estado" data-estado hidden></span>
+    <span class="hero__horas hero__horas--largo">Mar a sáb 8 a 00 <i>●</i> Dom 8 a 17 <i>●</i> Lun 17 a 00:30</span><span class="hero__horas hero__horas--corto">Mar–sáb 8–00 · Dom 8–17 · Lun 17–00:30</span>
+    <span class="hero__dire">Marcos Sastre 3258 · adentro del Club Parque</span>
+  </div>
+</section>
+
+<!-- ============ CINTA DEL BARRIO ============ -->
+<div class="marquesina papel-verde" aria-hidden="true">
+  <div class="marquesina__pista">
+    <span>Somos tradición</span><b>★</b><span>Somos barrio</span><b>★</b><span>Pasión por el fútbol, sabor que une</span><b>★</b><span>Una mesa compartida es encuentro</span><b>★</b><span>Como dios manda</span><b>★</b>
+    <span>Somos tradición</span><b>★</b><span>Somos barrio</span><b>★</b><span>Pasión por el fútbol, sabor que une</span><b>★</b><span>Una mesa compartida es encuentro</span><b>★</b><span>Como dios manda</span><b>★</b>
+  </div>
+</div>
+
+<!-- ============ CUNA DE CRACKS ============ -->
+<section class="seccion historia papel-crema" id="historia" aria-labelledby="historia-t">
+  <div class="contenedor historia__in">
+    <div class="historia__txt">
+      <p class="kicker reveal">Club Parque · Villa del Parque</p>
+      <h2 class="titulo" id="historia-t"><span class="linea"><span>Cuna</span></span> <span class="linea"><span>de cracks</span></span></h2>
+      <p class="reveal">Bodegón Parque es el espacio gastronómico del histórico Club Parque. Un club de barrio que arrancó con el básquet y en los 70 convirtió sus canchas en canchitas de baby fútbol, donde Ramón Maddoni formó a una generación entera de cracks.</p>
+      <p class="reveal">De acá salieron ídolos como Riquelme y Tévez, y cuatro campeones del mundo: Batista y Borghi en México 86, Paredes y Mac Allister en Qatar 2022. Y en uno de sus bailes de carnaval, Diego conoció a Claudia.</p>
+      <p class="reveal">Hoy las paredes del bodegón cuentan esa historia: copas, trofeos y camisetas enmarcadas, mientras llegan a la mesa los platos de siempre.</p>
+      <div class="historia__datos reveal">
+        <div><b>4</b><span>campeones del mundo salieron de sus canchitas</span></div>
+        <div><b>1.228</b><span>reseñas en Google · 4,2 ★</span></div>
+      </div>
+    </div>
+    <figure class="historia__foto polaroid descubre">
+      <span class="cinta"></span>
+      <img src="img/trofeos-600.webp" srcset="img/trofeos-600.webp 600w, img/trofeos-1100.webp 1100w" sizes="(min-width: 900px) 440px, 80vw" alt="Las copas y trofeos del club en el salón del bodegón" width="600" height="750" loading="lazy" decoding="async">
+      <figcaption>Las paredes que cuentan historias</figcaption>
+    </figure>
+  </div>
+
+  <div class="contenedor figus">
+    <div class="figus__cab reveal">
+      <h3 class="figus__t">El álbum del club</h3>
+      <p class="figus__ayuda"><span class="solo-mouse">Pasá el mouse y hacé clic para dar vuelta cada figurita.</span><span class="solo-dedo">Deslizá y tocá cada figurita para darla vuelta.</span></p>
+    </div>
+    <ul class="figus__fila fila-desliza" data-arrastre data-figus>
+      <li class="figu" style="--d:0"><button type="button" class="figu__btn" aria-pressed="false"><span class="figu__cara figu__cara--verde"><span class="figu__escudo"></span><span class="figu__camiseta" aria-hidden="true"></span><span class="figu__nom">Juan Román Riquelme</span><span class="figu__dato">Ídolo de Boca</span></span><span class="figu__dorso"><b>Riquelme</b><span>Uno de los cracks que pasaron por las canchitas del Club Parque antes de brillar en Boca y en la Selección.</span></span></button></li>
+      <li class="figu" style="--d:1"><button type="button" class="figu__btn" aria-pressed="false"><span class="figu__cara figu__cara--bordo"><span class="figu__escudo"></span><span class="figu__camiseta" aria-hidden="true"></span><span class="figu__nom">Carlos Tévez</span><span class="figu__dato">Ídolo de Boca</span></span><span class="figu__dorso"><b>Tévez</b><span>Otro de los chicos que descubrió el ojo de Ramón Maddoni en el baby del club.</span></span></button></li>
+      <li class="figu" style="--d:2"><button type="button" class="figu__btn" aria-pressed="false"><span class="figu__cara figu__cara--verde"><span class="figu__escudo"></span><span class="figu__camiseta" aria-hidden="true"></span><span class="figu__nom">Sergio Batista</span><span class="figu__dato">Campeón del mundo · 1986</span></span><span class="figu__dorso"><b>Batista</b><span>Campeón en México 86 con la Selección. Hace poco volvió al barrio a comer al bodegón.</span></span></button></li>
+      <li class="figu" style="--d:3"><button type="button" class="figu__btn" aria-pressed="false"><span class="figu__cara figu__cara--bordo"><span class="figu__escudo"></span><span class="figu__camiseta" aria-hidden="true"></span><span class="figu__nom">Leandro Paredes</span><span class="figu__dato">Campeón del mundo · 2022</span></span><span class="figu__dorso"><b>Paredes</b><span>De las canchitas de Villa del Parque a levantar la Copa en Qatar.</span></span></button></li>
+      <li class="figu" style="--d:4"><button type="button" class="figu__btn" aria-pressed="false"><span class="figu__cara figu__cara--verde"><span class="figu__escudo"></span><span class="figu__camiseta" aria-hidden="true"></span><span class="figu__nom">Alexis Mac Allister</span><span class="figu__dato">Campeón del mundo · 2022</span></span><span class="figu__dorso"><b>Mac Allister</b><span>Otro campeón del mundo en Qatar que jugó en el baby del Club Parque.</span></span></button></li>
+      <li class="figu figu--vos" style="--d:5"><button type="button" class="figu__btn" data-kit-open="reservas" aria-label="El próximo crack sos vos: reservá tu mesa"><span class="figu__cara figu__cara--noche"><span class="figu__escudo"></span><span class="figu__vos">vos</span><span class="figu__nom">El próximo crack</span><span class="figu__dato">Reservá tu mesa →</span></span></button></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ LA FORMACIÓN DE LA CASA ============ -->
+<section class="seccion formacion" id="formacion" aria-labelledby="formacion-t">
+  <div class="contenedor">
+    <div class="cabecera">
+      <p class="kicker kicker--oro reveal">Los titulares de la casa</p>
+      <h2 class="titulo" id="formacion-t"><span class="linea"><span>La formación</span></span> <span class="linea"><span>de la casa</span></span></h2>
+      <p class="cabecera__sub reveal"><span class="solo-mouse">Pasá el mouse por cada jugador y hacé clic para ver el plato.</span><span class="solo-dedo">Tocá cada jugador para ver el plato.</span> El 10, como corresponde, es la Milanesa Parque.</p>
+    </div>
+    <div class="formacion__in">
+      <div class="cancha reveal" data-cancha>
+        <svg class="cancha__lineas cancha__lineas--v" viewBox="0 0 640 1000" preserveAspectRatio="none" aria-hidden="true">
+          <rect x="14" y="14" width="612" height="972"/><line x1="14" y1="500" x2="626" y2="500"/><circle cx="320" cy="500" r="86"/>
+          <rect x="170" y="14" width="300" height="130"/><rect x="170" y="856" width="300" height="130"/><rect x="250" y="14" width="140" height="44"/><rect x="250" y="942" width="140" height="44"/>
+          <path class="cancha__flecha" d="M220 440 C 150 360, 160 280, 230 210"/><path class="cancha__flecha" d="M430 560 C 480 480, 470 380, 410 300"/>
+        </svg>
+        <svg class="cancha__lineas cancha__lineas--h" viewBox="0 0 1000 640" preserveAspectRatio="none" aria-hidden="true">
+          <rect x="14" y="14" width="972" height="612"/><line x1="500" y1="14" x2="500" y2="626"/><circle cx="500" cy="320" r="86"/>
+          <rect x="14" y="170" width="130" height="300"/><rect x="856" y="170" width="130" height="300"/><rect x="14" y="250" width="44" height="140"/><rect x="942" y="250" width="44" height="140"/>
+          <path class="cancha__flecha" d="M560 220 C 640 150, 720 160, 790 230"/><path class="cancha__flecha" d="M440 430 C 520 480, 620 470, 700 410"/>
+        </svg>
+        <div class="cancha__fichas" data-fichas></div>
+      </div>
+      <aside class="ficha-plato" aria-live="polite" data-ficha-plato>
+        <div class="ficha-plato__foto"><img src="img/mila-parque-800.webp" alt="" width="800" height="1281" loading="lazy" decoding="async"><span class="ficha-plato__num">10</span></div>
+        <div class="ficha-plato__txt">
+          <p class="ficha-plato__pos">Enganche</p>
+          <h3 class="ficha-plato__nom">Milanesa Parque</h3>
+          <p class="ficha-plato__desc">La de la casa: panceta crujiente, cheddar derretido y dos huevos fritos, con papas fritas.</p>
+          <div class="ficha-plato__acc"><span class="ficha-plato__precio">A confirmar</span><div class="ficha-plato__add" data-kit-qty="mila-parque"></div></div>
+        </div>
+      </aside>
+    </div>
+    <div class="banco reveal">
+      <span class="banco__t">En el banco · los postres</span>
+      <div class="banco__fila fila-desliza" data-arrastre data-banco></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LA CARTA ============ -->
+<section class="seccion carta" id="carta" aria-labelledby="carta-t">
+  <div class="contenedor">
+    <div class="cabecera cabecera--fila">
+      <h2 class="titulo" id="carta-t"><span class="linea"><span>La carta</span></span></h2>
+      <p class="cabecera__sub reveal">Platos abundantes y recetas caseras. Todo sale también para llevar: sumalo y lo pasás a buscar.</p>
+    </div>
+    <div data-kit="carta" hidden></div>
+    <div class="carta__cuerpo" data-carta-cuerpo>
+      <p class="carta__cargando">Cargando la carta…</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MENÚ EJECUTIVO ============ -->
+<section class="seccion ejecutivo papel-verde" id="ejecutivo" aria-labelledby="ejecutivo-t">
+  <div class="contenedor ejecutivo__in">
+    <div class="ejecutivo__izq">
+      <div class="ejecutivo__dias" data-dias aria-label="Días del menú ejecutivo"></div>
+      <h2 class="titulo" id="ejecutivo-t"><span class="linea"><span>Menú</span></span> <span class="linea"><span>ejecutivo</span></span></h2>
+      <p class="ejecutivo__bajada reveal">Al mediodía se come bien, rico y sin vueltas. Elegí tu plato:</p>
+      <ul class="ejecutivo__lista" data-ejecutivo></ul>
+    </div>
+    <div class="ejecutivo__der reveal">
+      <p class="ejecutivo__inc">Plato + bebida y postre</p>
+      <p class="ejecutivo__precio" data-ej-precio>A confirmar</p>
+      <p class="ejecutivo__nota">Martes a viernes al mediodía · todos los medios de pago</p>
+      <div class="ejecutivo__cta">
+        <button type="button" class="btn btn--crema" data-reservar-mediodia>Reservá para el mediodía</button>
+        <button type="button" class="btn btn--linea-crema" data-kit-open="carrito">Ver mi pedido</button>
+      </div>
+      <p class="ejecutivo__pista">Sumá el plato del día con “+” y lo retirás en el bodegón.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CENA SHOW ============ -->
+<section class="seccion show" id="show" aria-labelledby="show-t">
+  <div class="show__fotos" aria-hidden="true">
+    <img src="img/llena-600.webp" alt="" width="600" height="852" loading="lazy" decoding="async">
+    <img src="img/show-600.webp" alt="" width="480" height="854" loading="lazy" decoding="async">
+  </div>
+  <div class="contenedor show__in">
+    <div class="show__txt">
+      <p class="kicker kicker--oro reveal">Sábados a la noche</p>
+      <h2 class="titulo" id="show-t"><span class="linea"><span>Cena show</span></span> <span class="linea"><span>en vivo</span></span></h2>
+      <p class="reveal">Música en vivo desde las 21:30, el salón lleno y las porciones de siempre. Los cupos vuelan: sacá tu entrada.</p>
+    </div>
+    <div class="entrada-wrap reveal">
+      <div class="entrada papel-bordo" data-entrada>
+        <div class="entrada__cuerpo">
+          <span class="entrada__k">Entrada · Cena show</span>
+          <b class="entrada__artista" data-show-artista>Diego Desanzo</b>
+          <span class="entrada__fecha" data-show-fecha>Sábado · 21:30</span>
+          <span class="entrada__lugar">Marcos Sastre 3258 · Club Parque</span>
+        </div>
+        <div class="entrada__talon" data-talon role="button" tabindex="0" aria-label="Cortar el talón y reservar para el show">
+          <span class="entrada__talon-k">Mesa</span><b data-talon-num>2</b><span>personas</span>
+          <svg class="entrada__tijera" viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M8.1 8.1 20 20M8.1 15.9 20 4"/></svg>
+        </div>
+      </div>
+      <div class="entrada__acc">
+        <button type="button" class="btn btn--bordo btn--grande" data-reservar-show>Reservá para el show</button>
+        <span class="entrada__pista"><span class="solo-mouse">O arrastrá el talón para cortarlo.</span><span class="solo-dedo">O deslizá el talón para cortarlo.</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARA LLEVAR ============ -->
+<section class="seccion llevar papel-bordo" id="llevar" aria-labelledby="llevar-t">
+  <div class="contenedor">
+    <div class="cabecera cabecera--fila">
+      <h2 class="titulo" id="llevar-t"><span class="linea"><span>Pedilo y</span></span> <span class="linea"><span>pasalo a buscar</span></span></h2>
+      <p class="cabecera__sub reveal">Armá tu pedido acá, sale por WhatsApp y entra directo a la cocina. El bodegón te confirma el precio y la hora.</p>
+    </div>
+    <ul class="llevar__fila fila-desliza" data-arrastre data-llevar></ul>
+    <div class="llevar__pie reveal">
+      <button type="button" class="btn btn--crema btn--grande" data-kit-open="carrito">Ver mi pedido</button>
+      <a class="llevar__link" href="#carta">Ver toda la carta</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EL SALÓN ============ -->
+<section class="seccion salon papel-crema" id="salon" aria-labelledby="salon-t">
+  <div class="contenedor">
+    <div class="cabecera cabecera--fila">
+      <h2 class="titulo" id="salon-t"><span class="linea"><span>El salón</span></span></h2>
+      <p class="cabecera__sub reveal">Mesas largas, mantel blanco y las paredes llenas de fútbol. <span class="solo-mouse">Arrastrá las fotos.</span><span class="solo-dedo">Pasá las fotos con el dedo.</span></p>
+    </div>
+  </div>
+  <div class="galeria" data-galeria>
+    <figure class="g polaroid"><img src="img/salon-600.webp" srcset="img/salon-600.webp 600w, img/salon-1100.webp 1100w" sizes="(min-width: 900px) 460px, 86vw" alt="El salón con mesas blancas y lámparas" width="600" height="512" loading="lazy" decoding="async"><figcaption>El salón</figcaption></figure>
+    <figure class="g polaroid"><img src="img/mila-parque-800.webp" alt="La Milanesa Parque con huevos fritos y panceta" width="800" height="1281" loading="lazy" decoding="async"><figcaption>La Milanesa Parque</figcaption></figure>
+    <figure class="g polaroid"><img src="img/fachada-600.webp" srcset="img/fachada-600.webp 600w, img/fachada-1100.webp 1100w" sizes="(min-width: 900px) 520px, 86vw" alt="El toldo rojo de la entrada" width="600" height="295" loading="lazy" decoding="async"><figcaption>Marcos Sastre 3258</figcaption></figure>
+    <figure class="g polaroid"><img src="img/trofeos-600.webp" alt="Copas y trofeos del club" width="600" height="750" loading="lazy" decoding="async"><figcaption>Las copas del club</figcaption></figure>
+    <figure class="g polaroid"><img src="img/llena-600.webp" alt="El salón lleno en una noche de show" width="600" height="852" loading="lazy" decoding="async"><figcaption>Noche de show</figcaption></figure>
+    <figure class="g polaroid"><img src="img/toldo-600.webp" alt="El toldo del café con una camiseta enmarcada" width="600" height="600" loading="lazy" decoding="async"><figcaption>Café · Tostadero</figcaption></figure>
+    <figure class="g polaroid"><img src="img/salonv-600.webp" alt="Una mesa compartida en el salón" width="600" height="801" loading="lazy" decoding="async"><figcaption>Mesa compartida</figcaption></figure>
+  </div>
+</section>
+
+<!-- ============ DÓNDE + MARCADOR ============ -->
+<section class="seccion donde" id="donde" aria-labelledby="donde-t">
+  <div class="contenedor donde__in">
+    <div class="donde__izq">
+      <h2 class="titulo" id="donde-t"><span class="linea"><span>Dónde</span></span> <span class="linea"><span>jugamos</span></span></h2>
+      <div class="marcador reveal" data-marcador>
+        <div class="marcador__eq"><span>Bodegón</span><span></span><span>Hambre</span></div>
+        <div class="marcador__goles"><span class="marcador__n" data-gol-a>0</span><b>:</b><span class="marcador__n" data-gol-b>0</span></div>
+        <p class="marcador__estado" data-marcador-estado>&nbsp;</p>
+      </div>
+      <ul class="horarios reveal" data-horarios></ul>
+    </div>
+    <div class="donde__der reveal">
+      <p class="donde__dire"><b>Marcos Sastre 3258</b> · adentro del Club Parque, Villa del Parque (CABA)</p>
+      <div class="mapa"><iframe data-src="https://www.google.com/maps?q=Marcos%20Sastre%203258%2C%20Villa%20del%20Parque%2C%20CABA&amp;output=embed" title="Mapa: Marcos Sastre 3258, Villa del Parque" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <div class="donde__btns">
+        <a class="btn btn--bordo" href="https://www.google.com/maps/dir/?api=1&amp;destination=Marcos%20Sastre%203258%2C%20CABA" target="_blank" rel="noopener">Cómo llegar</a>
+        <a class="btn btn--linea-crema" href="https://wa.me/5491168535207" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn btn--linea-crema" href="tel:+5491168535207">Llamar</a>
+      </div>
+      <p class="donde__tel">Reservas y pedidos: <a href="https://wa.me/5491168535207" target="_blank" rel="noopener">11 6853-5207</a> · Take away: <a href="tel:+5491175620526">11 7562-0526</a></p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="pie">
+  <div class="contenedor pie__in">
+    <div class="pie__marca"><img src="img/escudo.svg" alt="Escudo de Bodegón Parque" width="70" height="80" loading="lazy"><div><b>Bodegón Parque</b><span>Pasión por el fútbol, sabor que une.</span></div></div>
+    <nav class="pie__nav" aria-label="Pie"><a href="#historia">La historia</a><a href="#carta">Carta</a><a href="#ejecutivo">Menú ejecutivo</a><a href="#show">Cena show</a><a href="#donde">Dónde</a></nav>
+    <div class="pie__datos"><span>Marcos Sastre 3258, Villa del Parque</span><a href="https://www.instagram.com/bodegonparque/" target="_blank" rel="noopener">@bodegonparque</a><a href="https://wa.me/5491168535207" target="_blank" rel="noopener">11 6853-5207</a></div>
+  </div>
+  <p class="pie__credito">Sitio desarrollado por <a href="https://alejomfernandez.com.ar" target="_blank" rel="noopener">Alejo Martín Fernández</a></p>
+</footer>
+
+<script type="module" src="js/app.js?v=1"></script>
+</body>
+</html>
