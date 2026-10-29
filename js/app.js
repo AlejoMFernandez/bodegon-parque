@@ -124,31 +124,21 @@ function arrastre() { $$('[data-arrastre]').forEach(arrastrable); }
 // =====================================================================
 // HORARIOS, ESTADO Y MARCADOR
 // =====================================================================
+// 24 h y siempre con minutos: "8:00 a 24:00"; la medianoche al cierre se lee "24:00"
+const hora = (h, cierre = false) => (h === '00:00' && cierre) ? '24:00' : h.replace(/^0([1-9]):/, '$1:');
 function horarios() {
   const H = K.config.horarios;
   const dias = [['mar', 'Martes'], ['mie', 'Miércoles'], ['jue', 'Jueves'], ['vie', 'Viernes'], ['sab', 'Sábado'], ['dom', 'Domingo'], ['lun', 'Lunes']];
   const hoy = ['dom', 'lun', 'mar', 'mie', 'jue', 'vie', 'sab'][ahoraBA().dow];
-  const fmt = (h) => h === '00:00' ? '00' : h.replace(/^0([1-9])(?=:)/, '$1').replace(/^(\d{1,2}):00$/, '$1');
-  $('[data-horarios]').innerHTML = dias.map(([k, n]) => `<li class="${k === hoy ? 'hoy' : ''}"><span>${n}${k === hoy ? ' · hoy' : ''}</span><span>${(H[k] || []).length ? H[k].map(f => f.map(fmt).join(' a ')).join(' · ') : 'Cerrado'}</span></li>`).join('');
-  const est = $('[data-estado]'); const mEst = $('[data-marcador-estado]');
+  $('[data-horarios]').innerHTML = dias.map(([k, n]) => `<li class="${k === hoy ? 'hoy' : ''}"><span>${n}${k === hoy ? ' · hoy' : ''}</span><span>${(H[k] || []).length ? H[k].map(([d, c]) => `${hora(d)} a ${hora(c, true)}`).join(' · ') : 'Cerrado'}</span></li>`).join('');
+  const est = $('[data-estado]'); const dEst = $('[data-donde-estado]');
   const pintar = () => {
-    const s = K.abierto(); const a = ahoraBA();
-    est.hidden = false; est.classList.toggle('cerrado', !s.abierto);
-    est.textContent = s.abierto ? `Abierto ahora · cierra ${s.cierra}` : s.abre ? `Cerrado · abre a las ${s.abre}` : 'Cerrado hoy';
-    const tiempo = a.min < 16 * 60 && a.min >= 5 * 60 ? '1º tiempo' : '2º tiempo';
-    mEst.classList.toggle('cerrado', !s.abierto);
-    mEst.textContent = s.abierto ? `Abierto · ${tiempo} · cierra ${s.cierra}` : s.abre ? `Entretiempo · volvemos a las ${s.abre}` : 'Entretiempo · volvemos mañana';
-    marcador(s.abierto);
+    const s = K.abierto();
+    const txt = s.abierto ? `Abierto ahora · cierra a las ${hora(s.cierra, true)}` : s.abre ? `Cerrado ahora · abre a las ${hora(s.abre)}` : 'Cerrado hoy';
+    est.hidden = false; est.classList.toggle('cerrado', !s.abierto); est.textContent = txt;
+    dEst.classList.toggle('cerrado', !s.abierto); dEst.textContent = txt;
   };
   pintar(); setInterval(pintar, 60_000);
-}
-let golesPintados = null;
-function marcador(abierto) {
-  const g = abierto ? 1 : 0; if (golesPintados === g) return; golesPintados = g;
-  const box = $('[data-marcador]'); const a = $('[data-gol-a]'); const b = $('[data-gol-b]');
-  const poner = () => { a.textContent = String(g); b.textContent = '0'; if (!reduce) { a.classList.remove('gira'); void a.offsetWidth; a.classList.add('gira'); } };
-  if (box.classList.contains('visto')) { poner(); return; }
-  new IntersectionObserver((es, o) => { if (es[0].isIntersecting) { o.disconnect(); setTimeout(poner, 500); } }, { threshold: .5 }).observe(box);
 }
 
 // =====================================================================
@@ -307,21 +297,23 @@ function pintarShow() {
 function reservarShow() { K.reservas?.abrir({ fecha: showFecha || proximoDia([6], 1290), hora: '21:30', personas: 2 }); }
 function show() {
   $('[data-reservar-show]').addEventListener('click', reservarShow);
+  // el talón se corta tirando hacia abajo: gira desde la línea punteada y cae (un toque o Enter también lo corta)
   const talon = $('[data-talon]');
-  let x0 = 0, dx = 0, activo = false, id = null, cortando = false;
+  let y0 = 0, dy = 0, activo = false, id = null, cortando = false;
+  const volver = () => { talon.classList.remove('arrastrando'); talon.style.transform = ''; };
   const cortar = () => {
-    if (cortando) return; cortando = true; talon.classList.remove('arrastrando'); talon.style.transform = ''; talon.classList.add('cortado');
-    setTimeout(reservarShow, reduce ? 0 : 320);
-    setTimeout(() => { talon.classList.remove('cortado'); cortando = false; }, 1500);
+    if (cortando) return; cortando = true; talon.classList.remove('arrastrando'); talon.style.transform = '';
+    void talon.offsetWidth; talon.classList.add('cortado');
+    setTimeout(reservarShow, reduce ? 0 : 380);
+    setTimeout(() => { talon.classList.remove('cortado'); talon.classList.add('vuelve'); setTimeout(() => talon.classList.remove('vuelve'), 500); cortando = false; }, 1600);
   };
-  talon.addEventListener('pointerdown', (e) => { if (e.button > 0) return; activo = true; id = e.pointerId; x0 = e.clientX; dx = 0; try { talon.setPointerCapture(id); } catch (_) { /* nada */ } });
+  talon.addEventListener('pointerdown', (e) => { if (e.button > 0 || cortando) return; activo = true; id = e.pointerId; y0 = e.clientY; dy = 0; try { talon.setPointerCapture(id); } catch (_) { /* nada */ } });
   talon.addEventListener('pointermove', (e) => {
-    if (!activo || e.pointerId !== id) return; dx = Math.max(0, e.clientX - x0);
-    if (dx > 3) { talon.classList.add('arrastrando'); talon.style.transform = `translateX(${dx}px) rotate(${dx * .08}deg)`; }
+    if (!activo || e.pointerId !== id) return; dy = Math.max(0, Math.min(40, e.clientY - y0));
+    if (dy > 2) { talon.classList.add('arrastrando'); talon.style.transform = `rotate(${dy * .35}deg)`; }
   });
-  const soltar = () => { if (!activo) return; activo = false; if (dx > 46 || dx <= 3) cortar(); else { talon.classList.remove('arrastrando'); talon.style.transform = ''; } };
-  talon.addEventListener('pointerup', soltar);
-  talon.addEventListener('pointercancel', () => { activo = false; talon.classList.remove('arrastrando'); talon.style.transform = ''; });
+  talon.addEventListener('pointerup', () => { if (!activo) return; activo = false; if (dy > 22 || dy <= 2) cortar(); else volver(); });
+  talon.addEventListener('pointercancel', () => { activo = false; volver(); });
   talon.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); cortar(); } });
   $('[data-reservar-mediodia]').addEventListener('click', () => K.reservas?.abrir({ fecha: proximoDia([2, 3, 4, 5], 14 * 60), hora: '12:30', personas: 2 }));
 }

@@ -33,7 +33,7 @@
   })();
 </script>
 <link rel="stylesheet" href="kit/kit.css?v=1">
-<link rel="stylesheet" href="css/style.css?v=1">
+<link rel="stylesheet" href="css/style.css?v=2">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Restaurant","name":"Bodegón Parque","servesCuisine":"Bodegón argentino","address":{"@type":"PostalAddress","streetAddress":"Marcos Sastre 3258","addressLocality":"Villa del Parque, CABA","addressCountry":"AR"},"telephone":"+54 9 11 6853-5207","acceptsReservations":"True","openingHours":["Tu-Sa 08:00-24:00","Su 08:00-17:00","Mo 17:00-00:30"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.2","reviewCount":"1228"},"sameAs":["https://www.instagram.com/bodegonparque/"]}
 </script>
@@ -122,7 +122,7 @@
   </div>
   <div class="hero__cinta papel-verde">
     <span class="estado" data-estado hidden></span>
-    <span class="hero__horas hero__horas--largo">Mar a sáb 8 a 00 <i>●</i> Dom 8 a 17 <i>●</i> Lun 17 a 00:30</span><span class="hero__horas hero__horas--corto">Mar–sáb 8–00 · Dom 8–17 · Lun 17–00:30</span>
+    <span class="hero__horas hero__horas--largo">Mar a sáb de 8:00 a 24:00 <i>●</i> Dom de 8:00 a 17:00 <i>●</i> Lun de 17:00 a 00:30</span><span class="hero__horas hero__horas--corto">Mar a sáb 8:00 a 24:00 · Dom 8:00 a 17:00<br>Lun 17:00 a 00:30</span>
     <span class="hero__dire">Marcos Sastre 3258 · adentro del Club Parque</span>
   </div>
 </section>
@@ -195,7 +195,7 @@
         <div class="cancha__fichas" data-fichas></div>
       </div>
       <aside class="ficha-plato" aria-live="polite" data-ficha-plato>
-        <div class="ficha-plato__foto"><img src="img/mila-parque-800.webp" alt="" width="800" height="1281" loading="lazy" decoding="async"><span class="ficha-plato__num">10</span></div>
+        <div class="ficha-plato__foto"><img src="img/mila-parque-800.webp" alt="" width="767" height="1350" loading="lazy" decoding="async"><span class="ficha-plato__num">10</span></div>
         <div class="ficha-plato__txt">
           <p class="ficha-plato__pos">Enganche</p>
           <h3 class="ficha-plato__nom">Milanesa Parque</h3>
@@ -274,7 +274,7 @@
       </div>
       <div class="entrada__acc">
         <button type="button" class="btn btn--bordo btn--grande" data-reservar-show>Reservá para el show</button>
-        <span class="entrada__pista"><span class="solo-mouse">O arrastrá el talón para cortarlo.</span><span class="solo-dedo">O deslizá el talón para cortarlo.</span></span>
+        <span class="entrada__pista"><span class="solo-mouse">O tirá del talón hacia abajo para cortarlo.</span><span class="solo-dedo">O tirá del talón hacia abajo para cortarlo.</span></span>
       </div>
     </div>
   </div>
@@ -305,7 +305,7 @@
   </div>
   <div class="galeria" data-galeria>
     <figure class="g polaroid"><img src="img/salon-600.webp" srcset="img/salon-600.webp 600w, img/salon-1100.webp 1100w" sizes="(min-width: 900px) 460px, 86vw" alt="El salón con mesas blancas y lámparas" width="600" height="512" loading="lazy" decoding="async"><figcaption>El salón</figcaption></figure>
-    <figure class="g polaroid"><img src="img/mila-parque-800.webp" alt="La Milanesa Parque con huevos fritos y panceta" width="800" height="1281" loading="lazy" decoding="async"><figcaption>La Milanesa Parque</figcaption></figure>
+    <figure class="g polaroid"><img src="img/mila-parque-800.webp" alt="La Milanesa Parque con huevos fritos y panceta" width="767" height="1350" loading="lazy" decoding="async"><figcaption>La Milanesa Parque</figcaption></figure>
     <figure class="g polaroid"><img src="img/fachada-600.webp" srcset="img/fachada-600.webp 600w, img/fachada-1100.webp 1100w" sizes="(min-width: 900px) 520px, 86vw" alt="El toldo rojo de la entrada" width="600" height="295" loading="lazy" decoding="async"><figcaption>Marcos Sastre 3258</figcaption></figure>
     <figure class="g polaroid"><img src="img/trofeos-600.webp" alt="Copas y trofeos del club" width="600" height="750" loading="lazy" decoding="async"><figcaption>Las copas del club</figcaption></figure>
     <figure class="g polaroid"><img src="img/llena-600.webp" alt="El salón lleno en una noche de show" width="600" height="852" loading="lazy" decoding="async"><figcaption>Noche de show</figcaption></figure>
@@ -319,11 +319,7 @@
   <div class="contenedor donde__in">
     <div class="donde__izq">
       <h2 class="titulo" id="donde-t"><span class="linea"><span>Dónde</span></span> <span class="linea"><span>jugamos</span></span></h2>
-      <div class="marcador reveal" data-marcador>
-        <div class="marcador__eq"><span>Bodegón</span><span></span><span>Hambre</span></div>
-        <div class="marcador__goles"><span class="marcador__n" data-gol-a>0</span><b>:</b><span class="marcador__n" data-gol-b>0</span></div>
-        <p class="marcador__estado" data-marcador-estado>&nbsp;</p>
-      </div>
+      <p class="donde__estado reveal" data-donde-estado>&nbsp;</p>
       <ul class="horarios reveal" data-horarios></ul>
     </div>
     <div class="donde__der reveal">
@@ -351,6 +347,6 @@
   <p class="pie__credito">Sitio desarrollado por <a href="https://alejomfernandez.com.ar" target="_blank" rel="noopener">Alejo Martín Fernández</a></p>
 </footer>
 
-<script type="module" src="js/app.js?v=1"></script>
+<script type="module" src="js/app.js?v=2"></script>
 </body>
 </html>
