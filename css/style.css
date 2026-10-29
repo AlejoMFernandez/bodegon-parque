@@ -353,14 +353,15 @@ ul { margin: 0; padding: 0; list-style: none; }
 .seccion-carta__t { font: 400 clamp(30px, 7vw, 44px)/1 var(--f-tit); text-transform: uppercase; }
 .seccion-carta__n { font-size: 14px; color: var(--gris); white-space: nowrap; }
 .seccion-carta__nota { font-size: 14.5px; color: var(--gris); margin: 10px 0 2px; min-height: 1.4em; }
-.platos > li { display: grid; grid-template-columns: 64px minmax(0, 1fr) auto; grid-template-areas: "foto nom add" "foto desc add" "foto precio add"; column-gap: 14px; align-items: center; padding: 16px 0; border-bottom: 1px solid rgba(242,235,221,.12); }
-.plato:not(.plato--foto) { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "nom add" "desc add" "precio add"; }
+.platos > li { display: grid; grid-template-columns: 64px minmax(0, 1fr) auto; grid-template-areas: "foto nom nom" "foto desc desc" "foto precio add"; column-gap: 14px; align-items: start; padding: 16px 0; border-bottom: 1px solid rgba(242,235,221,.12); }
+.plato:not(.plato--foto) { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "nom nom" "desc desc" "precio add"; }
+.plato__mini { align-self: start; margin-top: 3px; }
 .plato__mini { grid-area: foto; width: 64px; height: 64px; border-radius: 4px; object-fit: cover; background: #2b2820; }
 .plato__nom { grid-area: nom; font-weight: 700; font-size: 16.5px; line-height: 1.3; overflow-wrap: anywhere; }
 .plato__desc { grid-area: desc; font-size: 14.5px; line-height: 1.5; color: var(--gris); margin-top: 3px; }
-.plato__precio { grid-area: precio; font-weight: 700; font-size: 15px; color: var(--oro); margin-top: 4px; }
-.plato__add { grid-area: add; align-self: center; }
-.plato__casa { display: inline-block; margin-left: 8px; font: 800 11px/1 var(--f-txt); letter-spacing: .12em; text-transform: uppercase; color: var(--noche); background: var(--oro); padding: 4px 6px; border-radius: 3px; vertical-align: 2px; }
+.plato__precio { grid-area: precio; font-weight: 700; font-size: 15px; color: var(--oro); align-self: center; margin-top: 8px; }
+.plato__add { grid-area: add; align-self: center; margin-top: 8px; }
+.plato__casa { display: inline-block; margin-left: 8px; font: 800 12px/1 var(--f-txt); letter-spacing: .1em; text-transform: uppercase; color: var(--noche); background: var(--oro); padding: 4px 6px; border-radius: 3px; vertical-align: 2px; }
 .plato.is-off { opacity: .5; }
 .js .platos > li { animation: platoEntra .45s cubic-bezier(.2, .7, .2, 1) both; animation-delay: calc(var(--i, 0) * 40ms); }
 @keyframes platoEntra { from { opacity: 0; transform: translateY(10px); } }
@@ -379,7 +380,7 @@ ul { margin: 0; padding: 0; list-style: none; }
   .indice__b:hover { border-color: rgba(242,235,221,.35); }
   .seccion-carta { padding-top: 0; }
   .plato--foto .plato__mini { display: none; }
-  .platos > li, .plato:not(.plato--foto) { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "nom add" "desc add" "precio add"; padding: 18px 12px; margin-inline: -12px; border-radius: 4px; transition: background-color .2s; }
+  .platos > li, .plato:not(.plato--foto) { grid-template-columns: minmax(0, 1fr) auto; grid-template-areas: "nom add" "desc add" "precio add"; align-items: center; padding: 18px 12px; margin-inline: -12px; border-radius: 4px; transition: background-color .2s; }
   .plato--foto .plato__nom::after { content: ''; display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--oro); margin-left: 9px; vertical-align: 3px; }
   .plato.activo { background: rgba(242,235,221,.06); }
   .plato__nom { font-size: 18px; }
@@ -524,7 +525,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .mapa iframe { width: 100%; height: 100%; border: 0; filter: grayscale(.85) contrast(1.05); }
 .donde__btns { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
 .donde__tel { font-size: 15px; color: var(--gris); margin-top: 16px; }
-.donde__tel a { color: var(--crema); font-weight: 700; }
+.donde__tel a { color: var(--crema); font-weight: 700; display: inline-block; padding: 10px 0; }
 @media (min-width: 900px) {
   .donde__in { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: clamp(48px, 6vw, 96px); align-items: start; }
 }
@@ -540,7 +541,7 @@ ul { margin: 0; padding: 0; list-style: none; }
 .pie__nav a, .pie__datos a { color: var(--crema); text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; }
 .pie__datos span { min-height: 44px; display: inline-flex; align-items: center; color: var(--gris); }
 .pie__credito { text-align: center; font-size: 13px; color: #8f887b; margin-top: 40px; padding-inline: var(--lado); }
-.pie__credito a { color: #c8bfae; }
+.pie__credito a { color: #c8bfae; display: inline-block; padding: 12px 2px; }
 @media (min-width: 900px) { .pie__in { grid-template-columns: auto 1fr auto; align-items: center; } .pie__nav { justify-content: center; } }
 
 /* ================= KIT (popups, carrito, reservas) ================= */
@@ -566,4 +567,49 @@ ul { margin: 0; padding: 0; list-style: none; }
   .seccion-carta, .ficha-plato, .llevar__pie, .ejecutivo__lista { scroll-margin-bottom: 96px; }
   .kit-has-cart .seccion-carta__nav { padding-bottom: 72px; }
   .kit-has-cart .formacion .banco { padding-bottom: 64px; }
+}
+
+/* ===== celu: ajustes de usabilidad ===== */
+.panel-cta { display: none; }
+@media (max-width: 899px) {
+  /* la píldora flotante del panel tapaba botones: en el celu va como link dentro de la página y en el menú */
+  .kit-demo-pill { display: none !important; }
+  .panel-cta { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 28px; padding: 16px 18px; border-radius: 6px; background: rgba(14,13,12,.28); border: 1.5px dashed rgba(242,235,221,.55); color: var(--crema); text-decoration: none; font-weight: 700; font-size: 15px; line-height: 1.35; min-height: 64px; }
+  .panel-cta b { font-size: 22px; flex: none; }
+  .panel-cta small { display: block; font-weight: 500; font-size: 13.5px; color: #f1e2dc; margin-top: 2px; }
+  /* ficha del plato: foto arriba y texto completo abajo, alto fijo para que nada salte */
+  .ficha-plato { grid-template-columns: 1fr; grid-template-rows: 150px minmax(0, 1fr); height: 380px; }
+  .ficha-plato__txt { padding: 16px 18px 16px; }
+  .ficha-plato__acc { flex-wrap: nowrap; }
+}
+@media (max-width: 899px) and (max-height: 520px) and (orientation: landscape) {
+  .hero__in { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); column-gap: 28px; row-gap: 10px; align-content: center; padding-top: 30px; padding-bottom: 12px; }
+  .hero__firma { grid-column: 1; grid-row: 1; font-size: 26px; margin: 0; }
+  .hero__t { grid-column: 1; grid-row: 2; font-size: 40px; }
+  .hero__cta { grid-column: 1; grid-row: 3; }
+  .hero__cta .btn { min-height: 46px; }
+  .hero__collage { grid-column: 2; grid-row: 1 / span 3; height: 230px; }
+  .banderines { height: 34px; }
+  .ficha-plato { height: 330px; grid-template-columns: 220px minmax(0, 1fr); grid-template-rows: 1fr; }
+}
+.menu__panel { display: inline-flex; align-items: center; min-height: 44px; font-weight: 700; color: var(--crema); text-decoration: underline; text-underline-offset: 4px; margin-bottom: 6px; }
+/* celu: el pedido es una barra a lo ancho al pie (como en el moodboard) y la página deja lugar abajo para que nada quede tapado */
+@media (max-width: 899px) {
+  .kit-fab { left: 16px !important; right: 16px !important; width: auto !important; bottom: calc(12px + env(safe-area-inset-bottom)) !important; min-height: 58px; justify-content: flex-start; padding: 8px 16px 8px 10px; }
+  .kit-fab::after { content: 'Ver →'; margin-left: auto; font: 800 15px/1 var(--f-txt); }
+  .kit-fab__n { left: auto; right: 74px; top: 50%; transform: translateY(-50%); border-color: var(--crema); }
+  .kit-has-cart body { padding-bottom: calc(84px + env(safe-area-inset-bottom)); }
+  .kit-has-cart .seccion-carta__nav { padding-bottom: 0; }
+  .kit-has-cart .formacion .banco { padding-bottom: 0; }
+}
+/* celu acostado: la cancha va horizontal como en desktop, con la ficha al costado */
+@media (max-width: 899px) and (max-height: 520px) and (orientation: landscape) {
+  .formacion__in { grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); align-items: start; gap: 20px; }
+  .cancha { aspect-ratio: 1000 / 640; }
+  .cancha__lineas--v { display: none; } .cancha__lineas--h { display: block; }
+  .ficha { left: var(--dx); top: var(--dy); width: 44px; height: 44px; margin: -22px 0 0 -22px; }
+  .ficha__n { min-width: 20px; height: 20px; font-size: 12px; line-height: 20px; right: -7px; bottom: -6px; }
+  .ficha-plato { grid-template-columns: 1fr; grid-template-rows: 110px minmax(0, 1fr); height: 300px; }
+  .ficha-plato__nom { font-size: 22px; }
+  .ficha-plato__desc { -webkit-line-clamp: 2; min-height: 3em; font-size: 14px; }
 }
